@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktujte fanklub FC Barcelona.">
+    <title>Kontakt | FC Barcelona Fanklub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--bs-primary);">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">FCB Fanklub</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Domov</a></li>
+                        <li class="nav-item"><a class="nav-link" href="o-nas.html">O nás</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                    <button id="darkModeToggle" class="btn btn-outline-light btn-sm">🌙 Tmavý režim</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5 animated-section">
+        <h1 class="text-center mb-5">Spojme sa</h1>
+
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <form id="contactForm" class="bg-light p-4 rounded shadow-sm" novalidate>
+                    
+                    <fieldset class="mb-4 border p-3 rounded">
+                        <legend class="w-auto px-2 fs-5">Osobné údaje</legend>
+                        
+                        <div class="mb-3 position-relative">
+                            <label for="meno" class="form-label">Celé meno</label>
+                            <input type="text" class="form-control" id="meno" required minlength="3">
+                            <span class="invalid-hint">Meno musí mať aspoň 3 znaky.</span>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3 position-relative">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <span class="invalid-hint">Zadajte platný e-mail (napr. meno@domena.sk).</span>
+                            </div>
+                        <div class="col-md-6 mb-3 position-relative">
+                            <label for="telefon" class="form-label">Telefón</label>
+                            <input type="tel" class="form-control" id="telefon" pattern="^[\+]?[0-9\s\-]{9,15}$">
+                            <span class="invalid-hint">Zadajte platné číslo (min. 9 číslic, povolené je + a medzery).</span>
+                        </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="mb-4 border p-3 rounded">
+                        <legend class="w-auto px-2 fs-5">Vaša správa</legend>
+                        
+                        <div class="mb-3">
+                            <label for="typSpravy" class="form-label">Téma správy</label>
+                            <select class="form-select" id="typSpravy" required>
+                                <option value="" disabled selected>Vyberte tému...</option>
+                                <option value="clenstvo">Otázky ohľadom členstva</option>
+                                <option value="zajazd">Prihláška na zájazd</option>
+                                <option value="ine">Iné</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3 position-relative">
+                            <label for="sprava" class="form-label">Text správy</label>
+                            <textarea class="form-control" id="sprava" rows="4" required></textarea>
+                            <span class="invalid-hint">Správa nemôže byť prázdna.</span>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="suhlas" required>
+                        <label class="form-check-label" for="suhlas">
+                            Súhlasím so spracovaním osobných údajov
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="background-color: var(--bs-primary); border: none;">Odoslať správu</button>
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="bg-light p-4 rounded shadow-sm h-100">
+                    <h3 class="h4 mb-4">Kontaktné údaje</h3>
+                    <p><strong>Adresa:</strong><br>
+                    Futbalová ulica 10<br>
+                    821 04 Bratislava<br>
+                    Slovenská republika</p>
+                    
+                    <p><strong>E-mail:</strong><br>
+                    <a href="mailto:info@fcbfanklub.sk" class="text-decoration-none">info@fcbfanklub.sk</a></p>
+                    
+                    <p><strong>Telefón:</strong><br>
+                    +421 900 123 456</p>
+
+                    <hr>
+                    <p class="small text-muted">Na správy odpovedáme zvyčajne do 48 hodín.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-white text-center py-4 mt-5" style="background-color: #212529;">
+        <div class="container">
+            <p class="mb-0">&copy; 2023 FCB Fanklub Slovensko. Všetky práva vyhradené. Samuel Loffay</p>
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Vaša správa bola úspešne odoslaná. Ďakujeme!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Zatvoriť"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
